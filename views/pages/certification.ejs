@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <style>
+       
+        .star-rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+        .star-rating span {
+            display: inline-block;
+            position: relative;
+            font-size: 24px;
+        }
+        .star-rating span::before {
+            content: '\2605'; 
+            position: absolute;
+            opacity: 1;
+        }
+        .star-rating span:hover::before,
+        .star-rating span:hover ~ span::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <%- include('../common/header')%>
+    </header>
+
+    <main>
+        <main>
+            <div class="cards-container">
+                <div class="card">
+                    <h2>E-Commerce</h2>
+                    <div class="card-content">
+                        <p>Understanding of online sales mechanisms and platforms.
+                            Proficiency in payment gateway integration.
+                            Experience in managing product catalogs and inventory systems.</p>
+                        
+                    </div>
+                    <div class="star-rating">
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        
+                    </div>
+                    <div class="certification-image">
+                        <img src="indexbg.jpg" alt="non profit organization Certificate">
+                    </div>
+                </div>
+                </div>
+
+                <div class="card">
+                    <h2>Non profitable organization</h2>
+                    <div class="card-content">
+                        <p>Grant writing and fundraising expertise.
+                            Knowledge of donor management and engagement strategies.
+                            Understanding of compliance and regulations for non-profits.</p>
+                        
+                    </div>
+                    <div class="star-rating">
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        
+                    </div>
+                    <div class="certification-image">
+                        <img src="indexbg.jpg" alt="non profit organization Certificate">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Corporates</h2>
+                    <div class="card-content">
+                        <p>Project management and coordination within large teams.
+                            Corporate finance and budgeting knowledge.
+                            Corporate strategy development and implementation.</p>
+                        
+                    </div>
+                    <div class="star-rating">
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        <span class="active">☆</span>
+                        <span>☆</span>
+                        
+                    </div>
+                    <div class="certification-image">
+                        <img src="cert.jpg" alt="corporates Certificate">
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+        
+        
+        
+
+
+    <footer>
+        <%- include('../common/footer')%>
+    </footer>
+</body>
+
+</html>

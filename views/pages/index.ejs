@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeff Gitemi - Tech Solutions</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f0f0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .hero {
+            background-color: #170b41;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1, .hero h2, .hero h3 {
+            margin-top: 0;
+        }
+
+        .hero p {
+            margin-bottom: 20px;
+        }
+
+        .contact .social-icons {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .contact .social-icons a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: rgba(15, 135, 246, 0.45);
+        }
+        /* CSS for resizing the developer photo */
+.developer-photo {
+    align-items: center;
+    max-width: 239px; /* Limit the maximum width */
+    height: 300px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Round frame */
+}
+
+
+        .contact .social-icons img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Round frame */
+            margin-bottom: 10px;
+        }
+
+        .contact .social-icons p {
+            margin: 0;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <header>
+        
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <%- include('../common/header')%>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="../images/developer.jpg" alt="Developer Photo" class="developer-photo">
+            <h1>Welcome to the World of Tech Solutions</h1>
+            <p>Meet Jeff Gitemi, your expert developer delivering top-notch web and mobile solutions.</p>
+            <h2>About Me</h2>
+            <p>With a passion for innovation and a dedication to excellence, I specialize in crafting creative and scalable web and mobile solutions tailored to your unique needs.</p>
+            <p>Backed by years of experience, I bring expertise in web design, interactive design, and cutting-edge technologies to every project.</p>
+            <h3>Web Design</h3>
+            <p>Experience the power of creative and responsive web design solutions meticulously crafted to elevate your online presence and captivate your audience.</p>
+            <h3>Interactive Design</h3>
+            <p>Unlock the potential of effective interactive design that seamlessly blends creativity, usability, and functionality to create engaging user experiences. Prioritizing user needs and staying abreast of design trends, I ensure your digital presence leaves a lasting impression.</p>
+            
+        </section>
+    
+        <section class="contact">
+            <h2>Get in Touch</h2>
+            <div class="social-icons">
+                <a href="#" target="_blank">
+                    <img src="../images/instagram.jpg" alt="Instagram">
+                    <p>Instagram</p>
+                </a>
+                <a href="#" target="_blank">
+                    <img src="../images/facebook.png" alt="Facebook">
+                    <p>Facebook</p>
+                </a>
+                <a href="#" target="_blank">
+                    <img src="../images/twitter.png" alt="Reddit">
+                    <p>Twitter</p>
+                </a>
+                <a href="https://github.com/jeffgitemimaina" target="_blank">
+                    <img src="../images/github.png" alt="github">
+                    <p>github</p>
+                </a> <!-- Replace Reddit with "X" -->
+                <a href="#" target="_blank">
+                    <img src="../images/Bitbucket.png" alt="Bitbucket">
+                    <p>Bitbucket</p>
+                </a>
+                <a href="tel:+254706100265" target="_blank">
+                    <img src="../images/call.png" alt="Call">
+                    <p>Call</p>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/" target="_blank">
+                    <img src="../images/gmail.png" alt="Gmail">
+                    <p>Gmail</p>
+                </a>
+                <a href="https://www.linkedin.com/in/jeff-gitemi-b75623222" target="_blank">
+                    <img src="../images/linkedIn.png" alt="LinkedIn">
+                    <p>LinkedIn</p>
+                </a>
+                <a href="https://t.me/Making_itHappen" target="_blank">
+                    <img src="../images/telegam.png" alt="Telegram">
+                    <p>Telegram</p>
+                </a>
+                <a href="#" target="_blank">
+                    <img src="../images/tiktok.png" alt="TikTok">
+                    <p>TikTok</p>
+                </a>
+                <a href="https://wa.me/+254706100265" target="_blank">
+                    <img src="../images/whatsapp.jpg" alt="WhatsApp">
+                    <p>WhatsApp</p>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+
+    <footer>
+       <%- include('../common/footer') %>
+    </footer>
+
+</body>
+
+</html>

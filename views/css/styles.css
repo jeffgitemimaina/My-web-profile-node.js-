@@ -1,0 +1,32 @@
+/* Styles for common headers */
+.headers {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #170b41;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+/* Styles for common footers */
+.footers {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #170b41;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+/* Styles for main content */
+.main {
+    background-color: #170b41;
+    color: #fff;
+    margin-top: 50px; /* Adjust based on header height */
+    margin-bottom: 50px; /* Adjust based on footer height */
+    overflow-y: auto;
+    padding: 20px;
+    height: calc(100vh - 100px); /* Adjust based on header and footer height */
+}
