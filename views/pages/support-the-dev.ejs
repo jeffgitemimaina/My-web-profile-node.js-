@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Support</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(13, 32, 84, 1);
+            margin: 0;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .tip-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 0 10px;
+            /* Added padding to create space from the frame */
+        }
+
+        .tip-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .badge {
+            background-color: rgba(13, 32, 84, 1);
+            color: #fff;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+        }
+
+        .tip-btn {
+            background-color: rgba(33, 166, 22, 1);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .tip-btn:hover {
+            background-color: rgba(13, 32, 84, 1);
+        }
+
+        form {
+            max-width: 400px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="tel"],
+        input[type="number"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: rgba(16, 120, 39, 1);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px
+        }
+
+        button:hover {
+            background-color: rgba(13, 32, 84, 1);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <%- include('../common/header')%>
+    </header>
+
+    <h1>Support the developer via mpesa</h1>
+    <div class="tip-cards">
+        <div class="tip-card" data-amount="50">
+            <div class="badge">50</div>
+            <!-- Add dropdown for number selection -->
+            <div class="dropdown">
+                <button class="tip-btn">Give Ksh50</button>
+                <div class="dropdown-content">
+                    <a href="#" class="number-option">1</a>
+                    <a href="#" class="number-option">2</a>
+                    <a href="#" class="number-option">3</a>
+                    <!-- Add more options as needed -->
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-card" data-amount="100">
+            <div class="badge">100</div>
+            <!-- Add dropdown for number selection -->
+            <div class="dropdown">
+                <button class="tip-btn">Give Ksh100</button>
+                <div class="dropdown-content">
+                    <a href="#" class="number-option">1</a>
+                    <a href="#" class="number-option">2</a>
+                    <a href="#" class="number-option">3</a>
+                    <!-- Add more options as needed -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="tip-card" data-amount="200">
+            <div class="badge">200</div>
+            <!-- Add dropdown for number selection -->
+            <div class="dropdown">
+                <button class="tip-btn">Give Ksh200</button>
+                <div class="dropdown-content">
+                    <a href="#" class="number-option">1</a>
+                    <a href="#" class="number-option">2</a>
+                    <a href="#" class="number-option">3</a>
+                    <!-- Add more options as needed -->
+                </div>
+            </div>
+        </div>
+
+
+        <div class="tip-card" data-amount="500">
+            <div class="badge">500</div>
+            <!-- Add dropdown for number selection -->
+            <div class="dropdown">
+                <button class="tip-btn">Give Ksh500</button>
+                <div class="dropdown-content">
+                    <a href="#" class="number-option">1</a>
+                    <a href="#" class="number-option">2</a>
+                    <a href="#" class="number-option">3</a>
+                    <!-- Add more options as needed -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="tip-card" data-amount="1000">
+            <div class="badge">1000</div>
+            <!-- Add dropdown for number selection -->
+            <div class="dropdown">
+                <button class="tip-btn">Give Ksh1000</button>
+                <div class="dropdown-content">
+                    <a href="#" class="number-option">1</a>
+                    <a href="#" class="number-option">2</a>
+                    <a href="#" class="number-option">3</a>
+                    <!-- Add more options as needed -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="tip-card" data-amount="2000">
+            <div class="badge">2000</div>
+            <!-- Add dropdown for number selection -->
+            <div class="dropdown">
+                <button class="tip-btn">Give Ksh2000</button>
+                <div class="dropdown-content">
+                    <a href="#" class="number-option">1</a>
+                    <a href="#" class="number-option">2</a>
+                    <a href="#" class="number-option">3</a>
+                    <!-- Add more options as needed -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="tip-card" data-amount="3000">
+            <div class="badge">3000</div>
+            <!-- Add dropdown for number selection -->
+            <div class="dropdown">
+                <button class="tip-btn">Give Ksh3000</button>
+                <div class="dropdown-content">
+                    <a href="#" class="number-option">1</a>
+                    <a href="#" class="number-option">2</a>
+                    <a href="#" class="number-option">3</a>
+                    <!-- Add more options as needed -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="tip-card" data-amount="5000">
+            <div class="badge">5000</div>
+            <!-- Add dropdown for number selection -->
+            <div class="dropdown">
+                <button class="tip-btn">Give Ksh5000</button>
+                <div class="dropdown-content">
+                    <a href="#" class="number-option">1</a>
+                    <a href="#" class="number-option">2</a>
+                    <a href="#" class="number-option">3</a>
+                    <!-- Add more options as needed -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="tip-card" data-amount="10000">
+            <div class="badge">10000</div>
+            <!-- Add dropdown for number selection -->
+            <div class="dropdown">
+                <button class="tip-btn">Give Ksh10000</button>
+                <div class="dropdown-content">
+                    <a href="#" class="number-option">1</a>
+                    <a href="#" class="number-option">2</a>
+                    <a href="#" class="number-option">3</a>
+                    <!-- Add more options as needed -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <form id="tip-form" style="display: none;">
+        <label for="senderNumber">Your Phone Number:</label>
+        <input type="tel" id="senderNumber" name="senderNumber" placeholder="e.g., 0701234567" required>
+
+        <label for="tipAmount">Amount:</label>
+        <input type="text" id="totalAmount" name="totalAmount" readonly>
+        <!-- Make it readonly to display the entered amount -->
+
+        <button type="submit">Proceed</button>
+    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tipForm = document.getElementById("tip-form");
+
+            tipForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+                const senderNumber = document.getElementById("senderNumber").value;
+                const tipAmount = document.getElementById("totalAmount").value; // Fixed variable name
+
+                if (validateForm()) {
+                    const requestBody = {
+                        businessShortCode: "174379",
+                        password: "", // Set dynamically
+                        Timestamp: "", // Set dynamically
+                        transactionType: "CustomerPayBillOnline",
+                        amount: tipAmount,
+                        partyA: senderNumber,
+                        partyB: "600000",
+                        phoneNumber: senderNumber,
+                        callBackURL: "https://eolg9b8syvjbt9z.m.pipedream.net",
+                        accountReference: "jeffltd",
+                        transactionDesc: `Payment of Ksh ${tipAmount}`,
+                        accessToken: "Q4ZcXuZHAKmSZlKPTAaPFCpy6hXT",
+                        url: "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
+                    };
+
+                    // Calculate timestamp
+                    requestBody.Timestamp = new Date().toISOString().replace(/[^0-9]/g, '');
+
+                    // Calculate password
+                    const businessShortCode = "174379";
+                    const passkey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
+                    const concatenatedString = businessShortCode + passkey + requestBody.Timestamp;
+                    requestBody.password = btoa(concatenatedString);
+
+                    // Send POST request using fetch API
+                    fetch(requestBody.url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(requestBody)
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.ResultCode === "0") {
+                                alert("Payment accepted!");
+                            } else {
+                                alert("Payment rejected. Please check your details and try again.");
+                            }
+                        })
+                        .catch(error => console.error('Error:', error));
+
+                    alert("Prompt sent successfully!");
+                }
+            });
+
+            const tipButtons = document.querySelectorAll(".tip-btn");
+            tipButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    showForm();
+                });
+            });
+
+            const numberOptions = document.querySelectorAll(".number-option");
+            numberOptions.forEach(function (option) {
+                option.addEventListener("click", function () {
+                    const selectedNumber = parseInt(this.innerText);
+                    const tipAmount = parseInt(this.closest(".tip-card").getAttribute("data-amount"));
+                    const totalAmount = selectedNumber * tipAmount;
+                    document.getElementById("totalAmount").value = totalAmount;
+                    showForm();
+                });
+            });
+
+            // Set default amount to 1 tip when the page loads
+            const defaultTipAmount = parseInt(document.querySelector(".tip-card").getAttribute("data-amount"));
+            document.getElementById("totalAmount").value = defaultTipAmount;
+
+            function showForm() {
+                document.querySelector(".tip-cards").style.display = "none";
+                document.getElementById("tip-form").style.display = "block";
+            }
+
+            // Function to validate form inputs
+            function validateForm() {
+                const senderNumber = document.getElementById("senderNumber").value;
+                const tipAmount = document.getElementById("totalAmount").value;
+
+                // Example validation: Check if sender number is a valid Kenyan phone number
+                const kenyanPhoneNumberRegex = /^(?:254|\+254|0)?(7\d{8})$/;
+                if (!kenyanPhoneNumberRegex.test(senderNumber)) {
+                    // Show popover with error message
+                    alert("Please enter a valid Kenyan phone number.");
+                    return false;
+                }
+
+                // Example validation: Check if tip amount is a positive number
+                if (isNaN(tipAmount) || parseFloat(tipAmount) <= 0) {
+                    // Show popover with error message
+                    alert("Please enter a valid positive amount.");
+                    return false;
+                }
+
+                return true;
+            }
+        });
+    </script>
+
+    
+    
+
+
+
+    <footer>
+        <%- include('../common/footer')%>
+    </footer>
+</body>
+
+</html>

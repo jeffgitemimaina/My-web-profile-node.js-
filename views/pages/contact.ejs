@@ -6,45 +6,44 @@
     <title>Signup Page</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <style>
-       .form-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        .form-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-.form-group {
-    margin-bottom: 15px;
-}
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-label {
-    font-weight: bold;
-}
+        label {
+            font-weight: bold;
+        }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="password"],
-input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
 
-input[type="submit"] {
-    background-color: rgba(13, 32, 84, 1);
-    color: white;
-    cursor: pointer;
-}
+        input[type="submit"] {
+            background-color: rgba(13, 32, 84, 1);
+            color: white;
+            cursor: pointer;
+        }
 
-input[type="submit"]:hover {
-    background-color: rgba(13, 32, 84, 1);
-}
-
+        input[type="submit"]:hover {
+            background-color: rgba(13, 32, 84, 1);
+        }
     </style>
 </head>
 
@@ -53,6 +52,7 @@ input[type="submit"]:hover {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <%- include('../common/header')%>
     </header>
+
     <main class="text-center">
         <form onsubmit="return validateForm()" class="form-container">
             <div class="form-group">
@@ -78,17 +78,21 @@ input[type="submit"]:hover {
             <input type="submit" value="Submit">
         </form>
     </main>
-    
-  
-        
+
+
     <script>
+        function hashPassword(password) {
+            // Use a secure hashing algorithm like SHA-256
+            // For demonstration, using a simple hashing function
+            return password.split('').reverse().join('');
+        }
+
         function validateForm() {
             var firstName = document.getElementById("firstName").value.trim();
             var lastName = document.getElementById("lastName").value.trim();
             var email = document.getElementById("email").value.toLowerCase();
             var phone = document.getElementById("phone").value;
             var password = document.getElementById("password").value;
-
 
             if (firstName === "" || lastName === "") {
                 alert("Please enter both first name and last name");
@@ -106,20 +110,53 @@ input[type="submit"]:hover {
                 return false;
             }
 
-            var passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+            var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{6,}$/;
             if (!passwordRegex.test(password)) {
-                alert("Password should have at least one uppercase character, one number, one special character, and be at least 8 characters long");
+                alert("Password should have at least one uppercase character, one number, and be at least 6 characters long");
                 return false;
             }
 
-            return true;
+            var hashedPassword = hashPassword(password);
+
+            var formData = {
+                "firstName": firstName,
+                "secondName": lastName,
+                "email": email,
+                "pnumber": phone,
+                "password": hashedPassword
+            };
+
+            // Send JSON object to URL
+            fetch('https://annually-patient-calf.ngrok-free.app/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Form submitted successfully!");
+                        window.location.href = 'login'; // Redirect to another page
+                    } else {
+                        alert("Failed to submit form. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("An error occurred while submitting the form. Please try again later.");
+                });
+
+            return false; // Prevent form submission
         }
     </script>
-    </main>
+
+
+
     <footer>
         <%- include('../common/footer')%>
     </footer>
 </body>
-</body>
+
 
 </html>

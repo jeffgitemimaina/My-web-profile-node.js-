@@ -24,8 +24,12 @@ app.get('/e-marketing', (req, res) => {
   res.render('pages/e-marketing');
 });
 
-app.get('/login', (req, res) => {
-  res.render('pages/login'); // Ensure this path matches the directory structure
+
+app.get('/login',(req, res) =>{
+  res.render('pages/login')
+})
+app.get('/support-the-dev', (req, res) => {
+  res.render('pages/support-the-dev'); // Ensure this path matches the directory structure
 });
 
 

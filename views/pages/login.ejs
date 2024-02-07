@@ -3,97 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Support</title>
+    <title>Signup Page</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: rgba(13, 32, 84, 1);
-            margin: 0;
-            color: #fff;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .tip-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 0 10px;
-            /* Added padding to create space from the frame */
-        }
-
-        .tip-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .badge {
-            background-color: rgba(13, 32, 84, 1);
-            color: #fff;
-            font-size: 20px;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            border-radius: 50%;
-        }
-
-        .tip-btn {
-            background-color: rgba(33, 166, 22, 1);
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .tip-btn:hover {
-            background-color: rgba(13, 32, 84, 1);
-        }
-
-        form {
+        .form-container {
             max-width: 400px;
-            margin: 30px auto;
-            background-color: #fff;
+            margin: 50px auto;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: none;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
         label {
             font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
         }
 
+        input[type="text"],
+        input[type="email"],
         input[type="tel"],
-        input[type="number"],
-        button {
+        input[type="password"],
+        input[type="submit"] {
             width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
             box-sizing: border-box;
         }
 
-        button {
-            background-color: rgba(16, 120, 39, 1);
-            color: #fff;
-            border: none;
+        input[type="submit"] {
+            background-color: rgba(13, 32, 84, 1);
+            color: white;
             cursor: pointer;
-            border-radius: 20px
         }
 
-        button:hover {
+        input[type="submit"]:hover {
             background-color: rgba(13, 32, 84, 1);
         }
     </style>
@@ -105,159 +53,80 @@
         <%- include('../common/header')%>
     </header>
 
-    <h1>Support the developer via mpesa</h1>
-    <div class="tip-cards">
-        <div class="tip-card" data-amount="50">
-            <div class="badge">50</div>
-            <button class="tip-btn">Give Ksh50</button>
-        </div>
-        <div class="tip-card" data-amount="100">
-            <div class="badge">100</div>
-            <button class="tip-btn">Give Ksh100</button>
-        </div>
-
-        <div class="tip-card" data-amount="200">
-            <div class="badge">200</div>
-            <button class="tip-btn">Give Ksh200</button>
-        </div>
-
-        <div class="tip-card" data-amount="500">
-            <div class="badge">500</div>
-            <button class="tip-btn">Give Ksh500</button>
-        </div>
-
-        <div class="tip-card" data-amount="1000">
-            <div class="badge">1000</div>
-            <button class="tip-btn">Give Ksh1000</button>
-        </div>
-
-        <div class="tip-card" data-amount="2000">
-            <div class="badge">2000</div>
-            <button class="tip-btn">Give Ksh2000</button>
-        </div>
-
-        <div class="tip-card" data-amount="3000">
-            <div class="badge">3000</div>
-            <button class="tip-btn">Give Ksh3000</button>
-        </div>
-
-        <div class="tip-card" data-amount="5000">
-            <div class="badge">5000</div>
-            <button class="tip-btn">Give Ksh5000</button>
-        </div>
-
-        <div class="tip-card" data-amount="10000">
-            <div class="badge">10000</div>
-            <button class="tip-btn">Give Ksh10000</button>
-        </div>
-
-
-    </div>
-    <form id="tip-form">
-        <label for="senderNumber">Your Phone Number:</label>
-        <input type="tel" id="senderNumber" name="senderNumber" placeholder="e.g., 0701234567" required>
-    
-        <label for="tipAmount">Amount:</label>
-        <input type="number" id="tipAmount" name="tipAmount" placeholder="Enter amount" required>
-    
-        <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const tipForm = document.getElementById("tip-form");
-    
-            tipForm.addEventListener("submit", function (event) {
-                event.preventDefault();
-                const senderNumber = document.getElementById("senderNumber").value;
-                const tipAmount = document.getElementById("tipAmount").value;
-    
-                if (validateForm()) {
-                    const requestBody = {
-                        businessShortCode: "174379",
-                        password: "", // Set dynamically
-                        Timestamp: "", // Set dynamically
-                        transactionType: "CustomerPayBillOnline",
-                        amount: tipAmount,
-                        partyA: senderNumber,
-                        partyB: "600000",
-                        phoneNumber: senderNumber,
-                        callBackURL: "https://eolg9b8syvjbt9z.m.pipedream.net",
-                        accountReference: "jeffltd",
-                        transactionDesc: `Payment of $${tipAmount}`,
-                        accessToken: "Q4ZcXuZHAKmSZlKPTAaPFCpy6hXT",
-                        url: "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
-                    };
-    
-                    // Calculate timestamp
-                    requestBody.Timestamp = new Date().toISOString().replace(/[^0-9]/g, '');
-    
-                    // Calculate password
-                    const businessShortCode = "174379";
-                    const passkey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
-                    const concatenatedString = businessShortCode + passkey + requestBody.Timestamp;
-                    requestBody.password = btoa(concatenatedString);
-    
-                    // Send POST request using fetch API
-                    fetch(requestBody.url, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(requestBody)
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.ResultCode === "0") {
-                            alert("Payment accepted!");
-                        } else {
-                            alert("Payment rejected. Please check your details and try again.");
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
-    
-                    alert("prompt sent successfully!"); // Example success message
-                }
-            });
-    
-            const tipButtons = document.querySelectorAll(".tip-btn");
-            tipButtons.forEach(function(button) {
-                button.addEventListener("click", function() {
-                    showForm();
-                });
-            });
-        });
-    
-        function showForm() {
-            document.querySelector(".tip-cards").style.display = "none";
-            document.getElementById("tip-form").style.display = "block";
+    <main class="text-center">
+        <form onsubmit="return" class="form-container">
+           
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+        
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" autocomplete="new-password" required>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+<script>
+     function hashPassword(password) {
+            // Use a secure hashing algorithm like SHA-256
+            // For demonstration, using a simple hashing function
+            return password.split('').reverse().join('');
         }
-    
-        // Function to validate form inputs
+
         function validateForm() {
-            const senderNumber = document.getElementById("senderNumber").value;
-            const tipAmount = document.getElementById("tipAmount").value;
-    
-            // Example validation: Check if sender number is a valid Kenyan phone number
-            const kenyanPhoneNumberRegex = /^(?:254|\+254|0)?(7\d{8})$/;
-            if (!kenyanPhoneNumberRegex.test(senderNumber)) {
-                // Show popover with error message
-                alert("Please enter a valid Kenyan phone number.");
-                return false;
-            }
-    
-            // Example validation: Check if tip amount is a positive number
-            if (isNaN(tipAmount) || parseFloat(tipAmount) <= 0) {
-                // Show popover with error message
-                alert("Please enter a valid positive amount.");
-                return false;
-            }
-    
-            return true;
-        }
-    </script>
-    
+        
+            var email = document.getElementById("email").value.toLowerCase();
+            var password = document.getElementById("password").value;
 
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid email format");
+                return false;
+            }
+
+            var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+            if (!passwordRegex.test(password)) {
+                alert("Password should have at least one uppercase character, one number, and be at least 6 characters long");
+                return false;
+            }
+
+            var hashedPassword = hashPassword(password);
+
+            var formData = {
+                "email": email,
+                "password": hashedPassword
+            };
+
+            // Send JSON object to URL
+            fetch('https://annually-patient-calf.ngrok-free.app/users/auth', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                    if (response.ok) {
+                        alert("Form submitted successfully!");
+                        window.location.href = '/pages/support-the-dev'; // Redirect to another page
+                    } else if (response.status === 401) {
+                        alert("Unauthorized. Please check your credentials.");
+                    } else if (response.status === 500) {
+                        alert("Internal server error. Please try again later.");
+                    } else {
+                        alert("Failed to submit form. Please try again.");
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("An error occurred while submitting the form. Please try again later.");
+                });
+
+            return false; // Prevent form submission
+        }
+</script>
     <footer>
         <%- include('../common/footer')%>
     </footer>
