@@ -110,11 +110,13 @@
                 return false;
             }
 
-            var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+            const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
             if (!passwordRegex.test(password)) {
-                alert("Password should have at least one uppercase character, one number, and be at least 6 characters long");
+                alert("Password should have at least one uppercase character, one lowercase character, one number, one special character, and be at least 8 characters long");
                 return false;
             }
+
 
             var hashedPassword = hashPassword(password);
 
@@ -127,7 +129,7 @@
             };
 
             // Send JSON object to URL
-            fetch('https://annually-patient-calf.ngrok-free.app/users', {
+            fetch('http://localhost:8080/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -137,7 +139,7 @@
                 .then(response => {
                     if (response.ok) {
                         alert("Form submitted successfully!");
-                        window.location.href = 'login'; // Redirect to another page
+                        window.location.href = 'pages/login'; // Redirect to another page
                     } else {
                         alert("Failed to submit form. Please try again.");
                     }
